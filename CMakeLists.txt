@@ -23,6 +23,8 @@ endif()
 add_definitions(-DSL_CATALOG_CONNECT_AES_SECURITY_PRESENT
                 )
 
+link_directories(/root/stage/usr/local/lib)
+
 # Source files and executable
 find_package(Boost 1.70.0 REQUIRED COMPONENTS system) 
 
