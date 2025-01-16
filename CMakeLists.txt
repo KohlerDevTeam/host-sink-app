@@ -22,7 +22,7 @@ endif()
 
 add_definitions(-DSL_CATALOG_CONNECT_AES_SECURITY_PRESENT
                 )
-
+add_compile_options(-I/root/parts/ncp-connect/src/include)
 link_directories(/root/stage/usr/local/lib)
 
 # Source files and executable
