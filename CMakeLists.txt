@@ -20,8 +20,8 @@ if(CC_HAVE_WNO_STRINGOP_OVERFLOW)
     add_compile_options(-Wno-stringop-overflow)
 endif()
 
-add_definitions(-DSL_CATALOG_CONNECT_AES_SECURITY_PRESENT
-                )
+add_definitions(-DSL_CATALOG_CONNECT_AES_SECURITY_PRESENT)
+
 add_compile_options(-I/root/parts/ncp-connect/src)
 link_directories(/root/stage/usr/local/lib)
 
@@ -37,7 +37,7 @@ FetchContent_Declare(
 )
 FetchContent_MakeAvailable(cli)
 
-add_executable(host-sink-app 
+add_executable(hostsink 
                app_init.c
                app_process.c
                app_cli.cpp
@@ -46,7 +46,7 @@ add_executable(host-sink-app
                main.cpp
                )
 
-target_include_directories(host-sink-app PUBLIC
+target_include_directories(hostsink PUBLIC
                ${CMAKE_CURRENT_SOURCE_DIR}
                ./
                config
@@ -54,5 +54,5 @@ target_include_directories(host-sink-app PUBLIC
                )
 
 # External libraries
-target_link_libraries(host-sink-app PUBLIC connecthost)
-target_link_libraries(host-sink-app PRIVATE cli::cli)
+target_link_libraries(hostsink PUBLIC connecthost)
+target_link_libraries(hostsink PRIVATE cli::cli)
