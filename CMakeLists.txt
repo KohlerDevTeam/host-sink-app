@@ -37,7 +37,7 @@ FetchContent_Declare(
 )
 FetchContent_MakeAvailable(cli)
 
-add_executable(host_sink_app 
+add_executable(host-sink-app 
                app_init.c
                app_process.c
                app_cli.cpp
@@ -46,7 +46,7 @@ add_executable(host_sink_app
                main.cpp
                )
 
-target_include_directories(host_sink_app PUBLIC
+target_include_directories(host-sink-app PUBLIC
                ${CMAKE_CURRENT_SOURCE_DIR}
                ./
                config
@@ -54,5 +54,5 @@ target_include_directories(host_sink_app PUBLIC
                )
 
 # External libraries
-target_link_libraries(host_sink_app PUBLIC connecthost)
-target_link_libraries(host_sink_app PRIVATE cli::cli)
+target_link_libraries(host-sink-app PUBLIC connecthost)
+target_link_libraries(host-sink-app PRIVATE cli::cli)
